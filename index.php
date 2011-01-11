@@ -144,6 +144,7 @@
 </div>
 
 <script type='text/javascript' src="js/closure.js"></script>
+<script type='text/javascript' src="js/calculator.js"></script>
 
 </body>
 </html>

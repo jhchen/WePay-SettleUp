@@ -137,19 +137,6 @@ $(document).ready(function() {
 		$('#bill_explanation_container').show();
 	}
 	
-	function autocomplete_set() {
-		var inputs = $('.what_cell input, .who_cell input, .how_much_cell iniput', $(this).closest('tr'));
-		if (!inputs.hasClass('example') && inputs.val()) {
-			$.validationEngine.buildPrompt($(this).closest('.who_cell'), 'Please enter at least one person', 'error');
-		}
-		else {
-			$(this).closest('tr').find('input').removeClass('example');
-			$.validationEngine.closePrompt($(this).closest('.who_cell'));
-		}
-
-		update_bill(this);
-	}
-	
 	function init_autocomplete(obj) {
 		$(obj).tokenInput(names, {
 			'classes': {
@@ -174,12 +161,24 @@ $(document).ready(function() {
 					names = add_to_names_array(selection, names);
 				},
 			'onSet': function() {
-				autocomplete_set.call(obj);
+				$(obj).closest('tr').find('input').removeClass('example');
+				update_bill(obj);
 			},
 			'onRemove': update_bill(obj),
 			'enableCache': false,
 			'hintText': 'Start typing a friend\'s name'
 	    });
+		
+		var row = obj.closest('tr');
+		$('.who_cell .token-input-list-wepay input[type=text]', row).blur(function() {
+			$('input', row).removeClass('example');
+			if (!$('.who_cell .payer_name:first', row).val() && !$('.what_cell input', row).hasClass('example')) {
+				$.validationEngine.buildPrompt($(this).closest('.who_cell'), 'Please enter at least one person', 'error');
+			}
+			else {
+				$.validationEngine.closePrompt($(this).closest('.who_cell'));
+			}
+		});
 	}
 	
 	//Return names that have been entered but is a superstring of the input so far (for autocomplete)
