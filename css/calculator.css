@@ -345,6 +345,10 @@ a {
 .ui-dialog .ui-dialog-content { padding: 16px; padding-top: 0; }
 .ui-dialog.ui-dialog-required .ui-dialog-titlebar-close { display: none; }
 
+body .formError {
+	cursor: auto;
+}
+
 .tooltip {
 	color:#fff;	
 	background:transparent url(/img/tooltip/black_arrow.png);
