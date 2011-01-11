@@ -6,6 +6,7 @@
 	<link rel="shortcut icon" href="/img/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.4.css" />
 	<link rel="stylesheet" type="text/css" href="css/styles.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/calculator.css" />
 </head>
 
 <body>
