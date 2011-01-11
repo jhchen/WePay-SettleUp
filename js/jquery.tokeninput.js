@@ -262,9 +262,11 @@ $.TokenList = function (input, settings) {
         li_data = settings.prePopulate;
         if(li_data && li_data.length) {
             for(var i in li_data) {
-                var this_token = $("<li><p>"+li_data[i].name+"</p> </li>")
+                var this_token = $("<li><p></p></li>")
+                	.text(li_data[i].name)
                     .addClass(settings.classes.token)
                     .insertBefore(input_token);
+                li_data[i].name = this_token.text();
 
                 $("<span>x</span>")
                     .addClass(settings.classes.tokenDelete)
@@ -322,7 +324,8 @@ $.TokenList = function (input, settings) {
       if ($.isFunction(settings.onSelect)) {
     	  settings.onSelect.call(this, {'id': id, 'name': value});
       }
-      var this_token = $("<li><p>"+ value +"</p> </li>")
+      var this_token = $("<li><p></p></li>")
+      .text(value)
       .addClass(settings.classes.token)
       .insertBefore(input_token);
 
@@ -450,13 +453,15 @@ $.TokenList = function (input, settings) {
 
     function show_dropdown_searching () {
         dropdown
-            .html("<p>"+settings.searchingText+"</p>")
+        	.empty()
+            .append($("<p></p>").text(settings.searchingText))
             .show();
     }
 
     function show_dropdown_hint () {
         dropdown
-            .html("<p>"+settings.hintText+"</p>")
+        	.empty()
+            .append($("<p></p>").text(settings.hintText))
             .show();
     }
 
@@ -514,7 +519,7 @@ $.TokenList = function (input, settings) {
 
         } else {
             dropdown
-                .html("<p>"+settings.noResultsText+"</p>")
+                .empty().append($("<p></p>").text(settings.noResultsText))
                 .show();
         }
     }

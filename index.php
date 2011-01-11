@@ -144,7 +144,13 @@
 	</div>
 </div>
 
-<script type='text/javascript' src="js/closure.js"></script>
+<script type='text/javascript' src="js/jquery-1.4.4.min.js"></script>
+<script type='text/javascript' src="js/jquery-ui-1.8.7.custom.min.js"></script>
+<script type='text/javascript' src="fancybox/jquery.fancybox-1.3.4.js"></script>
+<script type='text/javascript' src="js/jquery.tokeninput.js"></script>
+<script type="text/javascript" src="js/jquery.validationEngine-en.js" ></script>
+<script type='text/javascript' src="js/jquery.validationEngine.js"></script>
+<script type='text/javascript' src="js/jquery.tools.min.js"></script>
 <script type='text/javascript' src="js/calculator.js"></script>
 
 </body>
