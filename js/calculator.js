@@ -361,25 +361,25 @@ $(document).ready(function() {
 	});
 	
     $('#contact_table .email input[type=text]').live('blur', function () {
-        if (!$(this).val() || !$(this).val().toUpperCase().match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$/)) {
+    	if (!$(this).val() || !$(this).val().toUpperCase().match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$/)) {
             $.validationEngine.buildPrompt(this, 'Please enter a valid email', 'error');
         }
         else {
-            $.validationEngine.closePrompt(this);
+        	$.validationEngine.closePrompt(this);
         }
     });
     
 	$('#settle_container .next').click(function() {
+        if ($('.formError').size() > 0) {
+            return false;
+        }
+        
         if ($('#contact_table tr:not(.template) .default_input').size() > 0) {
             $.validationEngine.buildPrompt(this, 'Please enter emails for your friends', 'error');
             return false;
         }
         else {
-            $.validationEngine.closePrompt(this);
-        }
-    
-        if ($('.formError').size() > 1) {
-            return false;
+        	$.validationEngine.closePrompt(this);
         }
         
 		$('#contact_container').hide();
@@ -394,6 +394,7 @@ $(document).ready(function() {
 	$('#settle_container .back').click(function() {
 		$('#confirm_container').hide();
 		$('#response_container').hide();
+		$('#response_container .results').hide();
 		$("#settle_container").dialog( "option", "title", 'Make it easy for you and your friends to pay each other by using WePay');
 		$('#contact_container').show();
 	});
