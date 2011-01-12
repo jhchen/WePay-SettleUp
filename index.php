@@ -82,7 +82,7 @@
 	</div>
 	
 	<div id="settle_container" class='dialog_container'>
-		<form action='/post.php' method='post'>
+		<form id='settle_form' action='/post.php' method='post'>
 			<div id='contact_container'>
 				<p>
 					<a target='_blank' href='http://www.wepay.com'>WePay</a> allows you and your friends to bill and pay each other online. 

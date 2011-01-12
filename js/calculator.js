@@ -216,12 +216,15 @@ $(document).ready(function() {
 			'autoOpen': false,
 			'width': '500px',
 			'title': 'Make it easy for you and your friends to pay each other by using WePay',
+			'open': function() {
+				$('.formError').remove();
+			},
 			'close': function() {
 				$('#confirm_container').hide();
-	            $('#response_container p').remove();
 				$('#response_container').hide();
 				$('#contact_container').show();
 				$('#settle_container').hide();
+				$('.formError').remove();
 			}
 		});
 	}
