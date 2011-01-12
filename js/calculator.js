@@ -395,6 +395,7 @@ $(document).ready(function() {
 		$('#confirm_container').hide();
 		$('#response_container').hide();
 		$('#response_container .results').hide();
+		$('#response_container .results div').hide();
 		$("#settle_container").dialog( "option", "title", 'Make it easy for you and your friends to pay each other by using WePay');
 		$('#contact_container').show();
 	});

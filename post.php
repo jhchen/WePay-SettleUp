@@ -72,7 +72,15 @@ if (count($errors) > 0) {
 else {
 	$ret->error = 0;
 	$ret->registered = $owner->registered;
-	$ret->url = 'https://www.wepay.com/group/view/' . $group->id;
+	$group_url = 'https://www.wepay.com/group/view/' . $group->id;
+	if (!$ret->registered) {
+		$ret->url = $owner->verify_account_url 
+				  . '?em=' . urlencode($users[$owner_index]['email']) 
+				  . '&rd=' . urlencode($group_url);
+	}
+	else {
+		$ret->url = $group_url;
+	}
 }
 
 
