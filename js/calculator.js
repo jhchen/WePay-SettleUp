@@ -83,7 +83,7 @@ $(document).ready(function() {
 			'transitionOut'	: 'none',
 			'width'			: 800,
 			'height'		: 500,
-			'href'			: 'http://vimeo.com/moogaloop.swf?clip_id=2351345',
+			'href'			: 'http://vimeo.com/18776744',
 			'type'			: 'swf'
 		});
 		
