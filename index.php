@@ -4,9 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Settle Up | WePay</title>
 	<link rel="shortcut icon" href="/img/favicon.ico" />
-	<link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.4.css" />
-	<link rel="stylesheet" type="text/css" href="css/styles.min.css" />
-	<link rel="stylesheet" type="text/css" href="css/calculator.css" />
+	<link rel="stylesheet" type="text/css" href="http://calc.wepay.com/min/?g=css" />
 </head>
 
 <body>
@@ -144,8 +142,7 @@
 	</div>
 </div>
 
-<script type='text/javascript' src="js/closure.js"></script>
-<script type='text/javascript' src="js/calculator.js"></script>
+<script type='text/javascript' src="http://calc.wepay.com/min/?g=js"></script>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
